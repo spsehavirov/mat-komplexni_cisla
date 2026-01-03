@@ -198,7 +198,7 @@
       \foreach \x in {-2,-1,1,2}
          \draw (\x,0.1) -- (\x,-0.1) node[below] {\x};
       \foreach \y in {-2,-1,1,2}
-         \draw (0.1,\y) -- (-0.1,\y) node[left] {\y};
+         \draw (0.1,\y) -- (-0.1,\y) node[left] {\y $i$};
       \draw[dashed] (2,0) -- (2,1);
       \draw[dashed] (0,1) -- (2,1);
       \filldraw[red] (2,1) circle (2pt) node[above right] {$2 + i$};
@@ -251,14 +251,21 @@
 	\end{frame}
 	
 	\begin{frame}{Zajímavé počítáníčko}
-	 \begin{tabular}{cc}
-	 \textbf{Vypočítejte:} & \textbf{Určete:} \\
-	 $(1+i)(1-i)$ & $|1+i|$ \\
-	 $(3+4i)(3-4i)$ & $|3-4i|$ \\
-	 $(\sqrt{2}+\sqrt{2}i)(\sqrt{2}-\sqrt{2}i)$ & $|\sqrt{2}+i\sqrt{2}|$ 
-	 \end{tabular}
+	 \begin{minipage}{0.5\textwidth}
+	  \begin{tabular}{cc}
+	  \textbf{Vypočítejte:} & \textbf{Určete:} \\
+	   $(1+i)(1-i)$ & $|1+i|$ \\
+	   $(3+4i)(3-4i)$ & $|3-4i|$ \\
+	   $(\sqrt{2}+\sqrt{2}i)(\sqrt{2}-\sqrt{2}i)$ & $|\sqrt{2}+i\sqrt{2}|$ 
+	  \end{tabular}
+	 \end{minipage} \vspace{4ex}
+	 \begin{minipage}{0.42\textwidth}
+	  \begin{alertblock}{Vzorec $(a+b)(a-b)$ v \C}
+	  Všimněme si, že tyto úlohy jsou si podobné. Je vhodné mít proto v paměti následující zkratku: $$z\overline{z}=(a+bi)(a-bi)=a^2+b^2$$ 
+	  \end{alertblock}
+	 \end{minipage}
 	 \begin{alertblock}{Zajímavé vztahy}
-	 Tady popis
+	 Platí následující rovnosti: $$|z|=\sqrt{z\overline{z}}=\sqrt{a^2+b^2}$$
 	 \end{alertblock}
 	\end{frame}
 	
@@ -307,7 +314,7 @@
         \draw[->, thick, blue] (0,0) -- (2,0) node[midway, above] {$2$};
         \draw[->, thick, red] (0,0.05) -- (6,0.05) node[midway, above] {$2\cdot 3$};
       \end{tikzpicture}
-       \vspace{2cm}
+       \hspace{1cm}
     % ====== Reálná, záporné ======
       \begin{tikzpicture}[scale=0.6]
         \draw[->] (-7,0) -- (3,0) node[right] {$\mathbb R$};
@@ -315,6 +322,16 @@
          \draw (\x,0.1) -- (\x,-0.1) node[below] {\x};
         \draw[->, thick, blue] (0,0) -- (2,0) node[midway, above] {$2$};
         \draw[->, thick, red] (0,0.05) -- (-6,0.02) node[midway, above] {$(-3)\cdot2$};
+      \end{tikzpicture} \\
+      Pro \C \ je interpretace poněkud nejednoduchá - ukážeme se jí pouze na násobení $i$:
+      \begin{tikzpicture}[scale=0.8, font=\small]
+        \draw[->] (-1.3,0) -- (1.3,0) node[above] {$\Re$};
+        \draw[->] (0,-1.3) -- (0,1.5) node[right] {$\Im$};
+        \foreach \x in {-1,1}
+         \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+         \draw (-0.1,1) -- (0.1,1) node[right] {$i$};
+         \draw (-0.1,-1) -- (0.1,-1) node[right] {$-i$};
+        \filldraw[BrickRed] (1,0) circle (2pt);
       \end{tikzpicture}
 	 \end{frame}
 
@@ -400,19 +417,15 @@
 	  \begin{tikzpicture}[scale=1, >=stealth, font=\small]
 	    \draw[->] (-2.2,0) -- (2.2,0) node[right] {$\Re$};
 	    \draw[->] (0,-2.2) -- (0,2.2) node[above] {$\Im$};
-
 	    % z1
 	    \draw[->, thick, BrickRed] (0,0) -- (1,1.73)
          node[right] {$z_1$} node[pos=0.5,above, sloped]{2};
-
  	    % z2
  	    \draw[->, thick, RoyalBlue] (0,0) -- (-2.6,1.5)
          node[above] {$z_2$} node[pos=0.5,above, sloped]{3};
-
   	    % z3
   	    \draw[->, thick, ForestGreen] (0,0) -- (0,-1.41)
          node[right] {$z_3$} node[pos=0.5,left]{$\sqrt{2}$};
-    
 	    % z4
  	     \draw[->, thick, Orange] (0,0) -- (1.41,-1.41)
           node[right] {$z_4$} node[pos=0.5,above, sloped]{2};
@@ -424,7 +437,7 @@
 	\begin{frame}{Převod na Goniometrický tvar}
 	Jak převést číslo $-1+i$ na Goniometrický tvar? Využijeme znalosti goniometrie:
 	 \begin{alertblock}{Převod ALG. tvaru na GONIO. tvar}
-	  \begin{minipage}{0.56\textwidth}
+	  \begin{minipage}{0.6\textwidth}
 	   \begin{enumerate}[i) ]
 	   \item Nejprve určíme $|z|$
 	   $$|-1+i| = \sqrt{(-1)^2+1^2} = \sqrt{2}$$
@@ -435,8 +448,8 @@
 	    $\varphi = \frac{3\pi}{4}; \frac{5\pi}{4}$ & $\varphi = \frac{\pi}{4}; \frac{3\pi}{4}$ \\
 	    \end{tabular}
 	   \end{enumerate}
-	  \end{minipage} \hspace{3ex}
-	  \begin{minipage}{0.36\textwidth}
+	  \end{minipage} \hspace{5ex}
+	  \begin{minipage}{0.32\textwidth}
 	   \begin{tikzpicture}[scale=2, >=stealth, font=\small]
     	 \draw[->] (-0.2,0) -- (1.3,0) node[above] {$\Re$};
    		 \draw[->] (0,-0.2) -- (0,1.3) node[right] {$\Im$};
@@ -459,18 +472,103 @@
 	 \end{tabular}
 	\end{frame}
 	
+	\begin{frame}{Převod na Algebraický tvar}
+	 Jak převést číslo zpátky do algebraického tvaru? Zcela jednoduše - vypočítáme ho:
+	 \begin{alertblock}{Převod z GONIO. tvaru na ALG. tvar}
+	  Máme číslo: $z=\sqrt{2}(\cos\frac{3\pi}{4}+i\sin\frac{3\pi}{4})$\\[2ex]
+	  V tomto převodu pouze číslo "spočítáme": \\[2ex]
+	  $$\sqrt{2}\left(\cos\dfrac{3\pi}{4}+i\sin\dfrac{3\pi}{4}\right) = \sqrt{2}\left(-\dfrac{\sqrt{2}}{2}+i\dfrac{\sqrt{2}}{2}\right) = -1+i$$ \\[2ex] Tedy $\sqrt{2}(\cos\frac{3\pi}{4}+i\sin\frac{3\pi}{4}) = -1+i$
+	 \end{alertblock}
+	\end{frame}
+	
+	\begin{frame}[label=C4]{Cvičení - převod na algebraický tvar}
+	
+	\reseni{Ř4}
+	\end{frame}
+	
+	\begin{frame}{Počítání v goniometrickém tvaru}
+	Operace v goniometrickém tvaru lze znázornit (a představit si) v geometrii: 
+ 	 \begin{alertblock}{Sčítání a odčítání}
+ 	  Je lepší (a taky bezpečnější) když si čísla převedete do ALG tvaru
+ 	 \end{alertblock}	
+ 	 \begin{alertblock}{Násobení}
+ 	 Vynásobíme velikosti a sečteme úhly - násobení je "otáčení" \\
+ 	 $\sqrt{2}\left(\cos \dfrac{\pi}{3} + i\sin \dfrac{\pi}{3}\right)\cdot \sqrt{3}\left(\cos \dfrac{\pi}{6} + i\sin \dfrac{\pi}{6}\right) = \sqrt{6}\left(\cos \dfrac{\pi}{2} + i\sin \dfrac{\pi}{2}\right)$
+ 	 \end{alertblock}
+ 	 \begin{alertblock}{Dělení}
+ 	 Vydělíme velikosti a odečteme úhly - dělení je "opačné otáčení" \\
+ 	 $\sqrt{2}\left(\cos \dfrac{\pi}{3} + i\sin \dfrac{\pi}{3}\right):\sqrt{3}\left(\cos \dfrac{\pi}{6} + i\sin \dfrac{\pi}{6}\right) = \dfrac{\sqrt{2}}{\sqrt{3}}\left(\cos \dfrac{\pi}{6} + i\sin \dfrac{\pi}{6}\right)$
+ 	 \end{alertblock}
+	\end{frame}
+		
+	\begin{frame}{Moivreova věta}
+	 \begin{alertblock}{Moivreova věta}
+	 Platí následující rovnost:
+	 $$z^n = (a+bi)^n = |z|^n(\cos n\varphi + i\sin n\varphi)$$
+	 \end{alertblock}
+	 Tento vztah lze snadno odvodit z násobení komplexních čísel v GONIO tvaru - přenechávám jako \textit{bonusovou jedničku} \\[2ex]
+	 Moivreova věta se využívá jak při umocňování tak při řešení specifických rovnic \\[2ex]
+	 Je daleko jednoduší umocnit komplexní číslo v GONIO tvaru (věřte mi...) \\[2ex]
+	\end{frame}
+	
+	\begin{frame}[label=C5]{Cvičení - násobení v GONIO a Moivreova věta}
+	 \begin{tabular}{C{7cm} C{7cm}}
+	 $  2\left(\cos \frac{\pi}{6} + i \sin \frac{\pi}{6}\right) \cdot
+	 3\left(\cos \frac{\pi}{4} + i \sin \frac{\pi}{4}\right) $
+	 & $ 4\left(\cos \frac{\pi}{3} + i \sin \frac{\pi}{3}\right) :
+	 2\left(\cos \frac{\pi}{6} + i \sin \frac{\pi}{6}\right) $ \\
+	 $ 5\left(\cos \frac{\pi}{2} + i \sin \frac{\pi}{2}\right)  \cdot
+	 2\left(\cos \frac{\pi}{3} + i \sin \frac{\pi}{3}\right) $
+	 & $ 3\left(\cos \frac{\pi}{4} + i \sin \frac{\pi}{4}\right) :
+	 3\left(\cos \frac{\pi}{4} + i \sin \frac{\pi}{4}\right)$ \\
+	 $ 2\left(\cos \frac{5\pi}{6} + i \sin \frac{5\pi}{6}\right) \cdot 
+	 4\left(\cos \frac{\pi}{6} + i \sin \frac{\pi}{6}\right)$
+	 & $ 6\left(\cos \frac{\pi}{3} + i \sin \frac{\pi}{3}\right):
+	 \left( \cos \frac{\pi}{2} + i \sin \frac{\pi}{2}\right) $ \\
+	 $ 2\left(\cos \pi + i \sin \pi\right) :
+	 5\left(\cos \frac{\pi}{3} + i \sin \frac{\pi}{3}\right) $
+	 & $ 3\left(\cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3}\right) \cdot
+	 2\left(\cos \frac{\pi}{6} + i \sin \frac{\pi}{6}\right)$
+	 \end{tabular}
+	 
+	 \begin{tabular}{cccc}
+	 $(1+i)^4$ & $(2-i)^3$ & $(-1+i)^6$ & $(3+ i)^2$ \\
+	 $(1-2i)^4$ & $(2+2i)^3$ & $(-2+i)^5$ & $(1+i)^6$
+	 \end{tabular}
+	\reseni{Ř5}
+	\end{frame}
+	
 \section{Lineární rovnice v $\mathbb{C}$}
-\begin{frame}
-Tady rovnice
-\end{frame} 
+
+	\begin{frame}{Úvod do rovnic}
+	 Rovnice v \C \ řešíme úplně podobným způsobem jako v $\mathbb{R}$ - jsou stejné ekvivalentní úpravy a stejný cíl - aby nám vyšlo: $$z=\text{něco}$$
+	 Jen je třeba dát pozor na to, že $3+2i$ je jedno číslo...\\
+	 Příklad: 
+	 $$(2+i)z=4-3i$$ $$z=\dfrac{4-3i}{2+i}$$ $$z=1-2i$$
+	\end{frame} 
+	
+	\begin{frame}{Možnosti řešení}
+     Příklad:$$(3-i)z-(2+4i)=1-i$$
+	\end{frame}
+	
+	\begin{frame}[label=C6]{Cvičení - lineární rovnice v \C}
+	 \begin{tabular}{C{6cm} C{6cm}}
+	 $(2 - i)z - (1 + 3i) = 4 - 2i$ & $(4 + i)z - (3 - i) = 1 + 5i$ \\[3ex]
+	 $(1 - 3i)z - (2 - i) = -1 + 2i$ & $(2 + i)z + (1 - i)z = 4 + 2i$ \\[3ex]
+	 $(3 - 2i)z - (1 + i)z = 5 - i$ & $(1 + i)z + 2z = 3 - i$ \\[3ex]
+	 \end{tabular} 
+	 \reseni{Ř6}
+	\end{frame}
+	
 \section{Kvadratické rovnice v $\mathbb{C}$}
-\begin{frame}
-Tady rovnice
-\end{frame} 
+
+	\begin{frame}
+	Tady rovnice
+	\end{frame} 
 \section{Binomické rovnice v $\mathbb{C}$}
-\begin{frame}
-Tady rovnice
-\end{frame} 
+	\begin{frame}
+	Tady rovnice
+	\end{frame} 
 
 \section{Řešení}
 	\begin{frame}[label=Ř1]{Řešení cvičení - operace v algebraickém tvaru}
@@ -480,12 +578,34 @@ Tady rovnice
 	
 	\begin{frame}[label=Ř2]{Řešení cvičení - absolutní hodnota \C}
 	\zpet{C2}
+	
 	\end{frame}
 	
 	\begin{frame}[label=Ř3]{Řešení cvičení - převod na goniometrický tvar}
 	\zpet{C3}
+	
+	\end{frame}
+	
+	\begin{frame}[label=Ř4]{Řešení cvičení - převod na algebraický tvar}
+	\zpet{C4}
+
+	\end{frame}
+	\begin{frame}[label=Ř5]{Řešení cvičení - násobení v GONIO a Moivreova věta}
+	\zpet{C5}
+	
 	\end{frame}
 
+	\begin{frame}[label=Ř6]{Řešení cvičení - lineární rovnice v \C}
+	\zpet{C6}
+	 \begin{tabular}{C{6cm} C{6cm}}
+	 $(2 - i)z - (1 + 3i) = 4 - 2i$ & $(4 + i)z - (3 - i) = 1 + 5i$ \\
+	 $z=$ & $z=$ \\[3ex]
+	 $(1 - 3i)z - (2 - i) = -1 + 2i$ & $(2 + i)z + (1 - i)z = 4 + 2i$ \\
+	 $z=$ & $z=$ \\[3ex]
+	 $(3 - 2i)z - (1 + i)z = 5 - i$ & $(1 + i)z + 2z = 3 - i$ \\
+	 $z=$ & $z=$ \\[3ex]
+	 \end{tabular}
+	\end{frame}
 
 
 
