@@ -71,7 +71,7 @@
 
 %===================================================== Úpravy pro TUTO prezentaci ====================================================
 \newcommand{\C}{$\mathbb{C}$}
-\newcommand{\reseni}[1]{\hfill \hyperlink{#1}{\beamergotobutton{\Large Řešení}}}
+\newcommand{\reseni}[1]{\ \hfill \hyperlink{#1}{\beamergotobutton{\Large Řešení}}}
 \newcommand{\zpet}[1]{\hyperlink{#1}{\beamerreturnbutton{\Large Zpět}} \hfill }
 \setbeamercolor{button}{bg=BrickRed}
 \setbeamercolor{block title alerted}{fg=BrickRed,bg=BrickRed!20}
@@ -135,7 +135,7 @@
 	
 \section{Algebraický tvar $\mathbb{C}$}
 
-	\begin{frame}{Algebraický tvar komplexního čísla}
+	\begin{frame}{Algebraický tvar komplexního čísla} %DOPLNIT
 	\begin{alertblock}{Algebraický tvar \C}
 	Je takový tvar komplexního čísla, který se zapisuje "normálně": 
 	\end{alertblock}
@@ -216,7 +216,7 @@
 	 \end{minipage} 
 	 \begin{minipage}{0.48\textwidth}
 	  \begin{alertblock}{Absolutní hodnota v \C}
-	   Absolutní hodnotou $|z|=|a+bi|$, kde $a,b \in \mathbb{R}$, rozumíme \textbf{reálné} číslo: $$|z|=|a+bi|=a^2+b^2$$
+	   Absolutní hodnotou $|z|=|a+bi|$, kde $a,b \in \mathbb{R}$, rozumíme \textbf{reálné} číslo: $$|z|=|a+bi|=\sqrt{a^2+b^2}$$
 	  \end{alertblock}
 	 \end{minipage}
 	\end{frame}
@@ -532,8 +532,8 @@
 	 \end{tabular}
 	 
 	 \begin{tabular}{cccc}
-	 $(1+i)^4$ & $(2-i)^3$ & $(-1+i)^6$ & $(3+ i)^2$ \\
-	 $(1-2i)^4$ & $(2+2i)^3$ & $(-2+i)^5$ & $(1+i)^6$
+	  $(1+i)^4$ & $(\sqrt{3}+i)^3$ & $(-1+i)^6$ & $(\sqrt{3}+ i)^2$ \\
+	  $(1-i)^4$ & $(2+2i)^3$ & $(-\sqrt{3}+i)^5$ & $(1+i)^6$
 	 \end{tabular}
 	\reseni{Ř5}
 	\end{frame}
@@ -562,9 +562,22 @@
 	
 \section{Kvadratické rovnice v $\mathbb{C}$}
 
-	\begin{frame}
-	Tady rovnice
+	\begin{frame}{Úvod do kvadratických rovnic}
+	Díky tomu, že komplexní čísla mají odmocninu ze záporného čísla, pak kvadratická rovnice má VŽDY řešení 
 	\end{frame} 
+	
+	\begin{frame}{Příklad}
+	$x^2-2x-2=0$ $x^2-2x+2=0$
+	\end{frame}
+	
+	\begin{frame}[label=C7]{Cvičení - Kvadratické rovnice v \C}
+	\begin{tabular}{C{4cm} C{4cm} C{4cm}}
+	 $x^2+6x+10=0$ & $x^2-2x+2 = 0$ & $x^2+4x+5=0$\\[3ex]
+	 $9x^2-24x+16=0$ & $5x^2-6x+2 = 0$ & $6x^2-19x+15=0$\\[3ex]
+	 $2x^2+4x+6=0$ & $4x^2-16x+25 = 0$ & $x^2+1=0$\\[3ex]
+	 \end{tabular}
+	\end{frame}
+	
 \section{Binomické rovnice v $\mathbb{C}$}
 	\begin{frame}
 	Tady rovnice
