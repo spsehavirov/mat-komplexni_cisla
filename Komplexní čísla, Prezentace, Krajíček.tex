@@ -51,38 +51,72 @@
  \DeclareMathOperator\cotg{cotg}
  
 %==================================================  Krajíčkovské úpravy  ================================================================
+\usepackage{pgfplots} \pgfplotsset{compat=1.18} % ...................pgf pro grafy
+\pgfplotsset{height=200pt} %velikost
+
+\definecolor{spse}{HTML}{a32020}
+\definecolor{spse2}{HTML}{b88b00}
+\definecolor{akcent}{HTML}{3388cc}
+\definecolor{spseIT}{HTML}{006d77}
+\definecolor{spseRIS}{HTML}{ff8800}
+
+\setbeamercolor*{palette sidebar primary}{bg=green}
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg=spse}
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=spse}
+\setbeamercolor*{palette quaternary}{use=structure,fg=white, bg=spse}
+
+\setbeamertemplate{blocks}[default]
+\setbeamertemplate{blocks}[shadow=false]
+\setbeamercolor{block title}{fg=black,bg=akcent}
+\setbeamercolor{block body}{fg=black, bg=akcent!40}
+\setbeamercolor{block title example}{fg=black,bg=spse2}
+\setbeamercolor{block body example}{fg=black, bg=spse2!40}
+\setbeamercolor{block title alerted}{fg=black,bg=spse!80}
+\setbeamercolor{block body alerted}{fg=black, bg=spse!40}
+
 \usepackage{parskip}
 \usepackage{xparse}
 
 \usefonttheme[onlymath]{serif} %...........pro dobrý matematický text
 
 \usepackage{hyperref}%.....................odkazy na web
-\newcommand{\link}[2]{\href{#1}{\color{Cyan}\underline{\smash{#2}}}}
-
-\usepackage{pgfplots} \pgfplotsset{compat=1.18} % ...................pgf pro grafy
-\pgfplotsset{height=200pt} %velikost
-
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,    
+    urlcolor=cyan,
+    }
 \usepackage{multirow} %....................pro lepší tabulky..........
 \renewcommand{\arraystretch}{1.5}
 
 \usepackage{cancel} %......................pro škrtání v text
 \renewcommand{\CancelColor}{\color{Red}}
 
+\newcommand{\ablock}[2]{\begin{alertblock}{#1 \hfill \rule{0.3cm}{0.4pt} \hspace{0.02cm} $\square$ \hspace{0.02cm} \textbf{X}} #2 \end{alertblock}}
+\newcommand{\eblock}[2]{\begin{exampleblock}{#1} #2 \end{exampleblock}}
+\newcommand{\nblock}[2]{\begin{block}{#1} #2 \end{block}}
+
 
 %===================================================== Úpravy pro TUTO prezentaci ====================================================
 \newcommand{\C}{$\mathbb{C}$}
+\newcommand{\R}{$\mathbb{R}$}
+\setbeamercolor{button}{bg=spse}
 \newcommand{\reseni}[1]{\ \hfill \hyperlink{#1}{\beamergotobutton{\Large Řešení}}}
 \newcommand{\zpet}[1]{\hyperlink{#1}{\beamerreturnbutton{\Large Zpět}} \hfill }
-\setbeamercolor{button}{bg=BrickRed}
-\setbeamercolor{block title alerted}{fg=BrickRed,bg=BrickRed!20}
-\setbeamercolor{block body alerted}{fg=black,bg=BrickRed!10}
-\setbeamertemplate{blocks}[rounded][shadow=true]
 
+%Vysvětlivky v rovnicích
+\newcounter{mybox} %https://tex.stackexchange.com/questions/117396/how-to-put-arrows-pointing-to-equalities-to-explain-each-step
+\newcommand\tikzmark[1]{%
+\tikz[remember picture,overlay] \node[inner xsep=0pt] (#1) {};
+}
+\newcommand\ColorBox[2][]{%
+\stepcounter{mybox}%
+\node[draw=red!70!black,fill=red!20,align=left,#1] (box\themybox) {#2};
+}
 
 %===========================================     ÚVODNÍ SLIDE    =========================================================================
 \title{Komplexní čísla}
 \author{II. ročník}
-\date{\the\year{}}
+\date{Poslední aktualizace: \today}
 \begin{document}
 \maketitle
 
@@ -138,6 +172,7 @@
 	\begin{frame}{Algebraický tvar komplexního čísla} %DOPLNIT
 	\begin{alertblock}{Algebraický tvar \C}
 	Je takový tvar komplexního čísla, který se zapisuje "normálně": 
+		$$\tikzmark{a}a + \tikzmark{b}b \cdot \tikzmark{i}i$$
 	\end{alertblock}
 	Není třeba se ničeho bát (imaginární číslo není reálné...) \\[2ex] 
 	Imaginární jednotka zde působí jako proměnná - a v podstatě se s ní i takto pracuje
