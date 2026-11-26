@@ -64,6 +64,7 @@
 \setbeamercolor*{palette primary}{use=structure,fg=white,bg=spse}
 \setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=spse}
 \setbeamercolor*{palette quaternary}{use=structure,fg=white, bg=spse}
+\setbeamercolor{title}{fg=white}
 
 \setbeamertemplate{blocks}[default]
 \setbeamertemplate{blocks}[shadow=false]
@@ -92,8 +93,8 @@
 \renewcommand{\CancelColor}{\color{Red}}
 
 \newcommand{\ablock}[2]{\begin{alertblock}{#1 \hfill \rule{0.3cm}{0.4pt} \hspace{0.02cm} $\square$ \hspace{0.02cm} \textbf{X}} #2 \end{alertblock}}
-\newcommand{\eblock}[2]{\begin{exampleblock}{#1} #2 \end{exampleblock}}
-\newcommand{\nblock}[2]{\begin{block}{#1} #2 \end{block}}
+\newcommand{\eblock}[2]{\begin{exampleblock}{#1 \hfill \rule{0.3cm}{0.4pt} \hspace{0.02cm} $\square$ \hspace{0.02cm} \textbf{X}} #2 \end{exampleblock}}
+\newcommand{\nblock}[2]{\begin{block}{#1 \hfill \rule{0.3cm}{0.4pt} \hspace{0.02cm} $\square$ \hspace{0.02cm} \textbf{X}} #2 \end{block}}
 
 
 %===================================================== Úpravy pro TUTO prezentaci ====================================================
@@ -139,21 +140,19 @@
 		
 	\begin{frame}{Co kdyby?}
 	Pamatujete na kvadratickou rovnici?
-		\begin{alertblock}{Řešení kvadratické rovnice}
+		\ablock{Řešení kvadratické rovnice}{
 		Kvadratická rovnice ve tvaru: $$ax^2+bx+c=0$$ má následující počet řešení: \\
 			\begin{itemize}
 			\item žádné řešení, jestliže $D<0$
 			\item jedno řešení, jestliže $D=0$
 			\item dvě řešení, jestliže $D>0$, kde $D=b^2-4ac$
-			\end{itemize}
-		\end{alertblock}
+			\end{itemize}}
 		Co kdyby ale kvadratická rovnice měla vždy řešení? Nebylo by to super? 
 	\end{frame}
 	
 	\begin{frame}{Definice imaginární jednotky}
-		\begin{alertblock}{Imaginární jednotka}
-		Imaginární jednotkou rozumíme takové "číslo" $i$, pro které platí následující vztah: $$i^2 = -1$$
-		\end{alertblock}
+		\ablock{Imaginární jednotka}{
+		Imaginární jednotkou rozumíme takové "číslo" $i$, pro které platí následující vztah: $$i^2 = -1$$}
 	\textbf{Doporučení:} Nepřemýšlejte, proč to tak je, jak je to možné... Je vhodné to přijmout jako fakt (prostě to tak je) a časem se vše vyjeví, proč to tak je. (Matematika je taky dospělá - o své problémy se dokáže postarat sama... \\[2ex]
 	Někdy budeme též používat výše uvedenou rovnost po odmocnění: $$i=\sqrt{-1}$$ což v reálných číslech možné není (neexistuje takové číslo, kterému by se rovnala $\sqrt{1}$).
 	\end{frame}
@@ -169,33 +168,29 @@
 	
 \section{Algebraický tvar $\mathbb{C}$}
 
-	\begin{frame}{Algebraický tvar komplexního čísla} %DOPLNIT
-	\begin{alertblock}{Algebraický tvar \C}
+	\begin{frame}{Algebraický tvar komplexního čísla} %DOPLNIT šipečky
+	\ablock{Algebraický tvar \C}{
 	Je takový tvar komplexního čísla, který se zapisuje "normálně": 
-		$$\tikzmark{a}a + \tikzmark{b}b \cdot \tikzmark{i}i$$
-	\end{alertblock}
+		$$\tikzmark{a}a + \tikzmark{b}b \cdot \tikzmark{i}i$$}
 	Není třeba se ničeho bát (imaginární číslo není reálné...) \\[2ex] 
 	Imaginární jednotka zde působí jako proměnná - a v podstatě se s ní i takto pracuje
 	\end{frame}
 	
 	\begin{frame}{Operace s komplexními čísly}
-	 \begin{alertblock}{Sčítání a odčítání}
+	 \eblock{Sčítání a odčítání}{
 	  + a - je velice intuitivní - sečteme/odečteme zvlášť reálnou část a imaginární část:
-	  $$(2+2i)+(3+i)=5+3i \hspace{3cm}(2+2i)-(3+i)=-1+i$$
-	 \end{alertblock}
+	  $$(2+2i)+(3+i)=5+3i \hspace{3cm}(2+2i)-(3+i)=-1+i$$}
 	 Závorky jsou zde pro přehlednost - sčítáme/odečítáme DVĚ komplexní čísla a výsledkem je JEDNO komplexní číslo. Běžně se závorky nepíší.
-	 \begin{alertblock}{Násobení}
+	 \eblock{Násobení}{
 	  Násobení je taktéž intuitivní - roznásobíme dvě závorky::
 	  $$(2+2i)\cdot(3+i)=6+6i+2i+2i^2=6+8i-2=4+8i$$
-	  Nesmíme zapomenout na to, že $i^2 = -1$
-	 \end{alertblock} 
+	  Nesmíme zapomenout na to, že $i^2 = -1$}
 	\end{frame}
 	
 	\begin{frame}{Operace s komplexními čísly}
-	 \begin{alertblock}{Dělení}
+	 \eblock{Dělení}{
 	 Pokud dělíme dvě komplexní čísla, zapíšeme toto dělení do zlomku. Následně zlomek "usměrníme" (místo odmocniny se zbavujeme $i$):
-	 $$(-2+3i):(1+i) = \dfrac{-2+3i}{1+i} \cdot \dfrac{1-i}{1-i} = \dfrac{(-2+3i)\cdot(1+i)}{1-i^2} = \dfrac{-5+i}{2}=-\dfrac{5}{2}+\dfrac{1}{2}i$$
-	 \end{alertblock}
+	 $$(-2+3i):(1+i) = \dfrac{-2+3i}{1+i} \cdot \dfrac{1-i}{1-i} = \dfrac{(-2+3i)\cdot(1-i)}{1-i^2} = \dfrac{-1+5i}{2}=-\dfrac{1}{2}+\dfrac{5}{2}i$$}
 	 Podobně jako u usměrňování zlomků, využíváme vzorce $(a-b)(a+b) = a^2-b^2$. Nicméně v případu komplexních čísel, lze tento vzorec "upravit":
 	 $$(a+bi)(a-bi) = a^2+b^2$$
 	\end{frame}
@@ -206,7 +201,6 @@
 	$(3+2i)-(2-2i)$ & $(1+2i)-2i$ & $4-(2-i)$ & $(-1+2i)-(-2+4i)$ \\
 	$(3+2i)\cdot(2-2i)$ & $(1+2i)\cdot 2i$ & $4\cdot (2-i)$ & $(-1+2i)\cdot (-2+4i)$ \\
 	$(3+2i):(2-2i)$ & $(1+2i): 2i$ & $4:(2-i)$ & $(-1+2i):(-2+4i)$ \\[2ex]
-	Cvičení z učebnice \\
 	\end{tabular} \\
 	\reseni{Ř1}
 	\end{frame}
@@ -220,9 +214,8 @@
 	 \end{tikzpicture} \\
 	 \begin{minipage}{0.58\textwidth}
 	Tak i \C \ mají své geometrické znázornění
-	 \begin{alertblock}{Gaussova rovina}
-	Gassovou rovinou rozumíme takovou rovinu, kde $x$ osa znázorňuje reálnou část komplexního čísla (značenou $\Re$), a osa $y$ znázorňuje imaginární část komplexního čísla (značenou $\Im$)
-	 \end{alertblock}
+	 \ablock{Gaussova rovina}{
+	Gassovou rovinou rozumíme takovou rovinu, kde $x$ osa znázorňuje reálnou část komplexního čísla (značenou $\Re$), a osa $y$ znázorňuje imaginární část komplexního čísla (značenou $\Im$)}
 	Body v této rovině znázorňují všechna komplexní čísla (podobně jako reálná osa znázorňuje všechny reálná čísla.
 	 \end{minipage}
 	 \begin{minipage}{0.4\textwidth} \hspace{4ex}
@@ -242,47 +235,72 @@
 	\end{frame}
 	
 	\begin{frame}{Absolutní hodnota \C}
-	Absolutní hodnotou z pohledu geometrie rozumíme vzdálenost od "počátku" (od $0$ v případě $\mathbb{R}$, v případě \C \ pak od $0+0i$) - tato definice je stejná nicméně toto má různé důsledky: \\
+	Absolutní hodnotou z pohledu geometrie rozumíme vzdálenost od "počátku" (od $0$ v případě $\mathbb{R}$, v případě \C \ pak od $0+0i$) - tato definice je stejná nicméně má různé důsledky: \\
 	 \begin{minipage}{0.48\textwidth}
-	  \begin{alertblock}{Absolutní hodnota v $\mathbb{R}$}
+	  \ablock{Absolutní hodnota v $\mathbb{R}$}{
 	  Absolutní hodnotou $|x|$ , kde $x\in \mathbb{R}$, rozumíme číslo: \\
-	  $$|x| = \begin{cases} x & \text{pro}\ x>0 \\ 0 & x=0 \\ -x & \text{pro}\ x<0 \end{cases}$$
-	  \end{alertblock}
+	  $$|x| = \begin{cases} x & \text{pro}\ x>0 \\ 0 & x=0 \\ -x & \text{pro}\ x<0 \end{cases}$$}
 	 \end{minipage} 
 	 \begin{minipage}{0.48\textwidth}
-	  \begin{alertblock}{Absolutní hodnota v \C}
-	   Absolutní hodnotou $|z|=|a+bi|$, kde $a,b \in \mathbb{R}$, rozumíme \textbf{reálné} číslo: $$|z|=|a+bi|=\sqrt{a^2+b^2}$$
-	  \end{alertblock}
+	  \ablock{Absolutní hodnota v \C}{
+	   Absolutní hodnotou $|z|=|a+bi|$, kde $a,b \in \mathbb{R}$, rozumíme \textbf{reálné} číslo: $$|z|=|a+bi|=\sqrt{a^2+b^2}$$}
 	 \end{minipage}
 	\end{frame}
 	
-	\begin{frame}[label=C2]{Cvičení - absolutní hodnota \C}
-	Určete: \\
-	\begin{tabular}{cccc}
-	$|1-i|$ & $|1+i|$ & $\left|\dfrac{1}{2}-\dfrac{\sqrt{3}}{2}i\right|$ & $|2-3i|$ \\
-	$|1+2i|$ & $|2-3i|$ & $|1+2i|$ & $|-2+i|$ \\
-	$|4-3i|$ & $|2+i|$ & $|\sqrt{3}+i|$ & $|2-2i|$
-	\end{tabular}
-	\reseni{Ř2}
+	\begin{frame}{Číslo opačné a sdružené}
+	 \ablock{Číslo opačné}{
+	 	\begin{minipage}{0.6\textwidth}
+	 	 Číslo opačné k číslu $x$ se rozumí číslo $-x$. Stejně tak v komplexních číslech: číslo opačné k číslu $2+i$ je číslo $-(2+i) = -2-i$.
+	 	\end{minipage} \hspace{4ex}
+		\begin{minipage}{0.3\textwidth}
+				  \begin{tikzpicture}[scale=0.8, font=\footnotesize]
+				     \draw[step=1,gray!30] (-2,-1) grid (2,1);
+     				 \draw[->, thick] (-2.2,0) -- (2.2,0) node[anchor=south west] {$\Re$};
+     				 \draw[->, thick] (0,-1.2) -- (0,1.2) node[right] {$\Im$};
+      					\foreach \x in {-2,-1,1,2}
+        				 \draw (\x,0.1) -- (\x,-0.1) node[below] {\x};
+      					\foreach \y in {-1,1}
+       					  \draw (0.1,\y) -- (-0.1,\y) node[left] {\y $i$};
+     					 \draw[dashed, spse] (-2,-1) -- (2,1);
+      					\filldraw[spse] (2,1) circle (2pt) node[right] {$2 + i$};
+      					\filldraw[spse] (-2,-1) circle (2pt) node[left] {$-(2 + i)$};
+	 				 \end{tikzpicture}
+		\end{minipage} }
+	 \ablock{Číslo komplexně sdružené}{
+	 \begin{minipage}{0.6\textwidth} 
+	 	 Číslo komplexně sdružené k číslu $a+bi$ se rozumí číslo $a-bi$. Značíme jej $\overline{z}$. Například když $z=2+i$, pak $\overline{z}=2-i$.
+	 	\end{minipage} \hspace{4ex}
+		\begin{minipage}{0.3\textwidth}
+				  \begin{tikzpicture}[scale=0.8, font=\footnotesize]
+				      \draw[step=1,gray!30] (-2,-1) grid (2,1);
+     				 \draw[->, thick] (-2.2,0) -- (2.2,0) node[anchor=south west] {$\Re$};
+     				 \draw[->, thick] (0,-1.2) -- (0,1.2) node[right] {$\Im$};
+      					\foreach \x in {-2,-1,1,2}
+        				 \draw (\x,0.1) -- (\x,-0.1) node[below] {\x};
+      					\foreach \y in {-1,1}
+       					  \draw (0.1,\y) -- (-0.1,\y) node[left] {\y $i$};
+     					 \draw[dashed, spse] (2,-1) -- (2,1);
+      					\filldraw[spse] (2,1) circle (2pt) node[right] {$2 + i$};
+      					\filldraw[spse] (2,-1) circle (2pt) node[right] {$2 - i$};
+	 				 \end{tikzpicture}
+		\end{minipage} }
 	\end{frame}
 	
-	\begin{frame}{Číslo opačné a sdružené}
-	 \begin{alertblock}{Číslo opačné}
-	 	\begin{minipage}{0.4\textwidth}
-	 	 Číslo opačné k číslu $x$ se rozumí číslo $-x$. Stejně tak v komplexních číslech: číslo opačné k číslu $1-i$ je číslo $-(1-i) = -1+i$.
-	 	\end{minipage} \hspace{4ex}
-		\begin{minipage}{0.4\textwidth}
-		Tady graf
-		\end{minipage}
-	 \end{alertblock}
-	 \begin{alertblock}{Číslo komplexně sdružené}
-	 \begin{minipage}{0.4\textwidth} 
-	 	 Číslo komplexně sdružené k číslu $a+bi$ se rozumí číslo $a-bi$. Značíme jej $\overline{z}$. Například když $z=1-i$, pak $\overline{z}=1+i$.
-	 	\end{minipage} \hspace{4ex}
-		\begin{minipage}{0.4\textwidth}
-		Tady graf
-		\end{minipage}
-	 \end{alertblock}
+ \begin{frame}[label=C2]{Cvičení - absolutní hodnota \C}
+	Určete absolutní hodnotu čísel: \\
+	\begin{tabular}{cccccccc}
+	$|1-i|$ & $|1+i|$ & $\left|\frac{1}{2}-\frac{\sqrt{3}}{2}i\right|$ & $|2-3i|$ & $|\sqrt{3}+i|$ & $|2-2i|$ & $|1+2i|$ & $|-2+i|$\\
+	$|1+2i|$ & $|2-3i|$ & $|4-3i|$ & $|2+i|$ & $|2+i|$ & $|3+2i|$ & $|2i|$ & $|-8|$ \\
+	\end{tabular} \\[2ex]
+	Určete číslo komplexně sdružené: 
+	\begin{tabular}{cccccccc}
+	$1-i$ & $1+i$ & $\frac{1}{2}-\frac{\sqrt{3}}{2}i$ & $2-3i$ & $2+i$ & $3+2i$ & $2i$ & $-8$ \\
+	\end{tabular} \\[2ex]
+	Určete číslo opačné: \\
+	\begin{tabular}{cccccccc}
+	$1-i$ & $1+i$ & $\frac{1}{2}-\frac{\sqrt{3}}{2}i$ & $2-3i$ & $2+i$ & $3+2i$ & $2i$ & $-8$ \\
+	\end{tabular} \\
+	\reseni{Ř2}
 	\end{frame}
 	
 	\begin{frame}{Zajímavé počítáníčko}
@@ -358,7 +376,7 @@
         \draw[->, thick, blue] (0,0) -- (2,0) node[midway, above] {$2$};
         \draw[->, thick, red] (0,0.05) -- (-6,0.02) node[midway, above] {$(-3)\cdot2$};
       \end{tikzpicture} \\
-      Pro \C \ je interpretace poněkud nejednoduchá - ukážeme se jí pouze na násobení $i$:
+      Pro \C \ je interpretace poněkud nejednoduchá - ukážeme se jí zatím pouze na násobení $i$:
       \begin{tikzpicture}[scale=0.8, font=\small]
         \draw[->] (-1.3,0) -- (1.3,0) node[above] {$\Re$};
         \draw[->] (0,-1.3) -- (0,1.5) node[right] {$\Im$};
@@ -620,6 +638,12 @@
 
 \section{Řešení}
 	\begin{frame}[label=Ř1]{Řešení cvičení - operace v algebraickém tvaru}
+	\begin{tabular}{cccc}
+	$5$ & $1+4i$ & $6-i$ & $-3+6i$ \\
+	$1+4i$ & $1$ & $2-i$ & $1-2i$ \\
+	$10-2i$ & $-4+2i$ & $8-4i$ & $-6-8i$ \\
+	$\dfrac{1}{4}+\dfrac{5}{4}i$ & $1-\dfrac{1}{2}i$ & $\dfrac{8}{5}+\dfrac{4}{5}i$ & $\dfrac{1}{2}$ \\[2ex]
+	\end{tabular} \\
 	\zpet{C1}
 	
 	\end{frame}
